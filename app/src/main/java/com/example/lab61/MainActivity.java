@@ -1,11 +1,14 @@
 package com.example.lab61;
 
+import android.graphics.Color;
 import android.os.Bundle;
+import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -29,6 +32,8 @@ public class MainActivity extends AppCompatActivity {
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
+        TextView myTextView = findViewById(R.id.textView);
+        registerForContextMenu(myTextView);
 
         View button = findViewById(R.id.buttonShowPopup);
         button.setOnClickListener(new View.OnClickListener() {
@@ -37,6 +42,32 @@ public class MainActivity extends AppCompatActivity {
                 showPopupMenu(v);
             }
         });
+    }
+
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+        super.onCreateContextMenu(menu, v, menuInfo);
+        getMenuInflater().inflate(R.menu.context_menu, menu);
+    }
+
+    @Override
+    public boolean onContextItemSelected(MenuItem item) {
+        TextView myTextView = findViewById(R.id.textView);
+
+        int itemId = item.getItemId();
+
+        if (itemId == R.id.menu_red) {
+            myTextView.setTextColor(Color.RED);
+            return true;
+        } else if (itemId == R.id.menu_green) {
+            myTextView.setTextColor(Color.GREEN);
+            return true;
+        } else if (itemId == R.id.menu_blue) {
+            myTextView.setTextColor(Color.BLUE);
+            return true;
+        } else {
+            return super.onContextItemSelected(item);
+        }
     }
 
     private void showPopupMenu(View view) {
