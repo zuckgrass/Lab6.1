@@ -23,8 +23,8 @@
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Hello World!"
-            android:textSize="24sp" />
+            android:text="Hello World! (hold me to change the color)"
+            android:textSize="16sp" />
     </RelativeLayout>
 
 
