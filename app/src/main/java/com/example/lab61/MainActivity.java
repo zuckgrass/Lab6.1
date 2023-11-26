@@ -2,6 +2,7 @@ package com.example.lab61;
 
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.Toast;
 
@@ -14,38 +15,48 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
     }
 
+    // Inflate the menu; this adds items to the action bar if it is present.
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.main_menu, menu);
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.main_menu, menu);
         return true;
     }
 
+    // Handle menu item selection
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        // Check if the selected item is a color or a shade
-        if (item.getGroupId() == R.id.menu_colors) {
-            // Display the selected item in a Toast
-            showToast(item.getTitle().toString());
+        int itemId = item.getItemId();
+
+        if (itemId == R.id.menu_item_option1) {
+            showToast("Option 1 selected");
+            return true;
+        } else if (itemId == R.id.menu_item_option2) {
+            showToast("Option 2 selected");
+            return true;
+        } else if (itemId == R.id.menu_item_option3) {
+            showToast("Option 3 selected");
+            return true;
+        } else if (itemId == R.id.submenu_item1) {
+            showToast("Submenu Item 1 selected");
+            return true;
+        } else if (itemId == R.id.submenu_item2) {
+            showToast("Submenu Item 2 selected");
+            return true;
+        } else if (itemId == R.id.submenu_item3) {
+            showToast("Submenu Item 3 selected");
             return true;
         } else {
-           /* switch (item.getItemId()) {
-                case R.id.color_red:
-                case R.id.color_blue:
-                case R.id.color_green:
-                    // Display the selected item in a Toast
-                    showToast(item.getTitle().toString());
-                    return true;
-
-                default:
-                    return super.onOptionsItemSelected(item);
-            }*/
+            return super.onOptionsItemSelected(item);
         }
-        return true;
     }
 
     private void showToast(String message) {
-        Toast.makeText(this, "Selected: " + message, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
 }

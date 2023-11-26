@@ -3,34 +3,30 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/menu_colors"
-        android:title="Colors">
+        android:id="@+id/menu_item_option1"
+        android:title="Option 1"/>
+    <item
+        android:id="@+id/menu_item_option2"
+        android:title="Option 2"/>
+    <item
+        android:id="@+id/menu_item_option3"
+        android:title="Option 3"/>
 
+    <item
+        android:id="@+id/menu_submenu"
+        android:title="Submenu">
         <menu>
             <item
-                android:id="@+id/color_red"
-                android:title="Red">
-
-                <menu>
-                    <item
-                        android:id="@+id/shade_pale_red"
-                        android:title="Pale Red" />
-                    <item
-                        android:id="@+id/shade_coral_red"
-                        android:title="Coral Red" />
-                    <item
-                        android:id="@+id/shade_dark_red"
-                        android:title="Dark Red" />
-                </menu>
-
-            </item>
+                android:id="@+id/submenu_item1"
+                android:title="Submenu Item 1"/>
             <item
-                android:id="@+id/color_blue"
-                android:title="Blue" />
+                android:id="@+id/submenu_item2"
+                android:title="Submenu Item 2"/>
             <item
-                android:id="@+id/color_green"
-                android:title="Green" />
+                android:id="@+id/submenu_item3"
+                android:title="Submenu Item 3"/>
         </menu>
     </item>
 
 </menu>
+
