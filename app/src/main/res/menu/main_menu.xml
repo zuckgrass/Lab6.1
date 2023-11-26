@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- res/menu/main_menu.xml -->
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menu_colors"
+        android:title="Colors">
+
+        <menu>
+            <item
+                android:id="@+id/color_red"
+                android:title="Red">
+
+                <menu>
+                    <item
+                        android:id="@+id/shade_pale_red"
+                        android:title="Pale Red" />
+                    <item
+                        android:id="@+id/shade_coral_red"
+                        android:title="Coral Red" />
+                    <item
+                        android:id="@+id/shade_dark_red"
+                        android:title="Dark Red" />
+                </menu>
+
+            </item>
+            <item
+                android:id="@+id/color_blue"
+                android:title="Blue" />
+            <item
+                android:id="@+id/color_green"
+                android:title="Green" />
+        </menu>
+    </item>
+
+</menu>
